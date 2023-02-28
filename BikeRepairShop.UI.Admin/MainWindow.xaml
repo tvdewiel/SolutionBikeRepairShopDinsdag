@@ -1,0 +1,30 @@
+﻿<Window x:Class="BikeRepairShop.UI.Admin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BikeRepairShop.UI.Admin"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Customer">
+                
+            </TabItem>
+            <TabItem Header="Bike">
+                <DataGrid Name="BikeDataGrid">
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Add" Click="MenuItemAddBike_Click"></MenuItem>
+                            <MenuItem Header="Delete" Click="MenuItemDeleteBike_Click"></MenuItem>
+                            <MenuItem Header="Update" Click="MenuItemUpdateBike_Click"></MenuItem>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Repairman">
+
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
