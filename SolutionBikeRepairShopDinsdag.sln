@@ -5,9 +5,13 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeRepairShop.BL", "BikeRepairShop.BL\BikeRepairShop.BL.csproj", "{F0967164-DB26-4A89-9F6A-6EBB2F5D2FC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRepairShop.UI.Admin", "BikeRepairShop.UI.Admin\BikeRepairShop.UI.Admin.csproj", "{729F0899-265B-4991-8BD0-71DDDCF40CDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeRepairShop.UI.Admin", "BikeRepairShop.UI.Admin\BikeRepairShop.UI.Admin.csproj", "{729F0899-265B-4991-8BD0-71DDDCF40CDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRepairShop.DL", "BikeRepairShop.DL\BikeRepairShop.DL.csproj", "{87D7EE23-5876-4A4D-9F17-DA1CBEEBB669}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeRepairShop.DL", "BikeRepairShop.DL\BikeRepairShop.DL.csproj", "{87D7EE23-5876-4A4D-9F17-DA1CBEEBB669}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleApps", "ConsoleApps", "{38835D74-7631-4900-BB12-4C0457D7D73A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTestDL", "ConsoleAppTestDL\ConsoleAppTestDL.csproj", "{8052348F-0539-4CDB-9326-F2D215371098}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,16 @@ Global
 		{87D7EE23-5876-4A4D-9F17-DA1CBEEBB669}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87D7EE23-5876-4A4D-9F17-DA1CBEEBB669}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87D7EE23-5876-4A4D-9F17-DA1CBEEBB669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8052348F-0539-4CDB-9326-F2D215371098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8052348F-0539-4CDB-9326-F2D215371098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8052348F-0539-4CDB-9326-F2D215371098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8052348F-0539-4CDB-9326-F2D215371098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8052348F-0539-4CDB-9326-F2D215371098} = {38835D74-7631-4900-BB12-4C0457D7D73A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BA78EA89-3139-4245-B4B0-1D01F8724B3B}
