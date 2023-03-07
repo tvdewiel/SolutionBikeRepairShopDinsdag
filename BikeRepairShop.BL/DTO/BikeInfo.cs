@@ -9,7 +9,7 @@ namespace BikeRepairShop.BL.DTO
 {
     public class BikeInfo
     {
-        public BikeInfo(int id, string description, BikeType bikeType, double purchaseCost, int customerId, string customerDescription)
+        public BikeInfo(int? id, string description, BikeType bikeType, double purchaseCost, int customerId, string customerDescription)
         {
             Id = id;
             Description = description;
@@ -18,7 +18,7 @@ namespace BikeRepairShop.BL.DTO
             Customer = (customerId,customerDescription);
         }
 
-        public int Id { get; set; } //bikeID
+        public int? Id { get; set; } //bikeID
         public string Description { get; set; }
         public BikeType BikeType { get; set; }
         public double PurchaseCost { get; set; }

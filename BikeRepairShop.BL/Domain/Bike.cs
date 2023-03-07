@@ -9,6 +9,21 @@ namespace BikeRepairShop.BL.Domain
 {
     public class Bike
     {
+        public Bike(string? description, double purchaseCost, BikeType bikeType)
+        {
+            Description = description;
+            PurchaseCost = purchaseCost;
+            BikeType = bikeType;
+        }
+
+        public Bike(int? iD, string? description, double purchaseCost, BikeType bikeType)
+        {
+            ID = iD;
+            Description = description;
+            PurchaseCost = purchaseCost;
+            BikeType = bikeType;
+        }
+
         public int? ID { get; private set; }
         public string? Description { get; set; }
         public double PurchaseCost { get; private set; }
