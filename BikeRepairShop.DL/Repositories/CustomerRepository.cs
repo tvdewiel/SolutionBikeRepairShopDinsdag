@@ -16,6 +16,34 @@ namespace BikeRepairShop.DL.Repositories
             this.connectionString = connectionString;
         }
 
+        public void AddBike(Bike bike)
+        {
+            try
+            {
+                string sql = "INSERT INTO Bike(biketype,purchasecost,description,customerid,status) output  INSERTED.ID VALUES(@biketype,@purchasecost,@description,@customerid,@status)";
+                using(SqlConnection connection= new SqlConnection(connectionString))
+                using(SqlCommand command = connection.CreateCommand())
+                {
+                    connection.Open();
+                    command.CommandText = sql;
+                    command.Parameters.AddWithValue("@biketype",bike.BikeType.ToString());
+                    command.Parameters.AddWithValue("@purchasecost", bike.PurchaseCost);
+                    if (bike.Description!= null)
+                        command.Parameters.AddWithValue("@description", bike.Description);
+                    else
+                        command.Parameters.AddWithValue("@description",DBNull.Value);
+                    command.Parameters.AddWithValue("@customerid", bike.Customer.ID);
+                    command.Parameters.AddWithValue("@status", 1);
+                    int bid=(int)command.ExecuteScalar();
+                    bike.SetId(bid);
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new CustomerRepositoryException("AddBike", ex);
+            }
+        }
+
         public List<BikeInfo> GetBikesInfo()
         {
             try
@@ -42,6 +70,11 @@ namespace BikeRepairShop.DL.Repositories
             {
                 throw new CustomerRepositoryException("GetBikesInfo", ex);
             }
+        }
+
+        public Customer GetCustomer(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

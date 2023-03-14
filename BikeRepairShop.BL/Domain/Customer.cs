@@ -22,11 +22,14 @@ namespace BikeRepairShop.BL.Domain
         {
             if (Bikes.Contains(bike)) throw new DomainException("customer-addbike");
             Bikes.Add(bike);
+            if (bike.Customer!=this) bike.SetCustomer(this);
         }
         public void RemoveBike(Bike bike)
         {
             if (!Bikes.Contains(bike)) throw new DomainException("customer-removebike");
+            if (bike.Customer == this) bike.RemoveCustomer();
             Bikes.Remove(bike);
+            
         }
         public void SetName(string name)
         {

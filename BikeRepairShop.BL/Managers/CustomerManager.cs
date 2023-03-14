@@ -31,9 +31,9 @@ namespace BikeRepairShop.BL.Managers
         public void AddBike(BikeInfo bikeInfo)
         {
             try {
-                Customer customer = repo.GetCustomer(bikeInfo.Customer.id);
+                //Customer customer = repo.GetCustomer(bikeInfo.Customer.id);
                 Bike bike = DomainFactory.NewBike(bikeInfo);
-                customer.AddBike(bike);
+                //customer.AddBike(bike);
                 repo.AddBike(bike);
                 bikeInfo.Id=bike.ID;
             }

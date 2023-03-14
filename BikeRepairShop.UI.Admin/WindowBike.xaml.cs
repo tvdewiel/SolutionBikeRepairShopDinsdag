@@ -65,6 +65,10 @@ namespace BikeRepairShop.UI.Admin
             else //add
             {
                 //Bike = new BikeUI(10, "kkkk", BikeType.regularBike, 120, 1, "josken");
+                Bike = new BikeUI(null,DescriptionTextBox.Text, (BikeType)BikeTypeComboBox.SelectedItem, double.Parse(PurchaseCostTextBox.Text),1,"jos");
+                //Bike.Description = DescriptionTextBox.Text;
+                //Bike.BikeType = (BikeType)BikeTypeComboBox.SelectedItem;
+                //Bike.PurchaseCost = double.Parse(PurchaseCostTextBox.Text);
                 customerManager.AddBike(BikeMapper.ToDTO(Bike));
             }
             DialogResult = true;
