@@ -1,2 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BikeRepairShop.BL.Domain.Repair">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACQAAAAQAAAAAAAAAAEBAAAQAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Domain\Repair.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="repairTasks" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BikeRepairShop.BL.Domain.RepairOrder">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAECAgAAAAAAQAAAAEAIADAAAQEAAAAAAgAAAAACAAA=</HashCode>
+      <FileName>Domain\RepairOrder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="repairs" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BikeRepairShop.BL.Domain.Repairman">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Domain\Repairman.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BikeRepairShop.BL.Domain.RepairAction">
+    <Position X="7" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\RepairAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BikeRepairShop.BL.Domain.RepairTask">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAABAAACAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Domain\RepairTask.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Repairman" />
+      <Property Name="RepairAction" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

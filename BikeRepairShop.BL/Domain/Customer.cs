@@ -20,6 +20,7 @@ namespace BikeRepairShop.BL.Domain
 
         public void AddBike(Bike bike)
         {
+            if (bike == null) throw new DomainException("Customer");
             if (Bikes.Contains(bike)) throw new DomainException("customer-addbike");
             Bikes.Add(bike);
             if (bike.Customer!=this) bike.SetCustomer(this);

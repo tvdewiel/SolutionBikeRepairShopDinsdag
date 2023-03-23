@@ -8,7 +8,15 @@ namespace BikeRepairShop.BL.Domain
 {
     public class Repairman
     {
-        public int Id { get;private set; }
+        public Repairman(int? id, string name, double costPerHour, string email)
+        {
+            Id = id;
+            Name = name;
+            CostPerHour = costPerHour;
+            Email = email;
+        }
+
+        public int? Id { get;private set; }
         public string Name { get; private set; }
         public double CostPerHour { get; private set; }
         public string Email { get; private set; }

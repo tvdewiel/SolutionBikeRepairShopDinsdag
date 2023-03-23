@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BikeRepairShop.BL.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace BikeRepairShop.BL.Domain
 {
     public class RepairOrder
     {
-        public int Id { get;private set; }
+        public int? Id { get;private set; }
         public DateOnly DateIn { get; set; }
         public DateOnly? DateOut { get;private set; }
         public Customer Customer { get; private set; }
@@ -17,13 +18,42 @@ namespace BikeRepairShop.BL.Domain
         public double? CostPayed { get; private set; }
         public Urgency Urgency { get; private set; }
         private List<Repair> repairs = new List<Repair>();
+
+        public RepairOrder(DateOnly dateIn, DateOnly? dateOut, Customer customer, double discount, bool payed, double? costPayed, Urgency urgency)
+        {
+            DateIn = dateIn;
+            DateOut = dateOut;
+            Customer = customer;
+            Discount = discount;
+            Payed = payed;
+            CostPayed = costPayed;
+            Urgency = urgency;
+        }
+
+        public RepairOrder(int? id, DateOnly dateIn, DateOnly? dateOut, Customer customer, double discount, bool payed, double? costPayed, Urgency urgency, List<Repair> repairs)
+        {
+            Id = id;
+            DateIn = dateIn;
+            DateOut = dateOut;
+            Customer = customer;
+            Discount = discount;
+            Payed = payed;
+            CostPayed = costPayed;
+            Urgency = urgency;
+            this.repairs = repairs;
+        }
+
         public void AddRepair(Repair repair)
         {
-
+            if (repair == null) throw new DomainException("AddRepair");
+            if (repairs.Contains(repair)) throw new DomainException("AddRepair");
+            repairs.Add(repair);
         }
         public void RemoveRepair(Repair repair)
         {
-
+            if (repair == null) throw new DomainException("RemoveRepair");
+            if (!repairs.Contains(repair)) throw new DomainException("RemoveRepair");
+            repairs.Remove(repair);
         }
         public double Cost()
         {
@@ -41,7 +71,12 @@ namespace BikeRepairShop.BL.Domain
         }
         public IReadOnlyList<Repair> Repairs()
         {
-
+            return repairs.AsReadOnly();
+        }
+        public void SetId(int id)
+        {
+            if (id <= 0) throw new DomainException("RepairOrder");
+            Id = id;
         }
     }
 }
